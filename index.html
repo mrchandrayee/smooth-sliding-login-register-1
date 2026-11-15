@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080914">
+  <title>Smooth Sliding Login/Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <h1>Smooth sliding Login/Register</h1>
+
+    <section class="auth-shell" id="authShell" aria-label="Login and registration">
+      <div class="form-panel login-panel">
+        <form class="auth-form" id="loginForm">
+          <h2>Welcome Back</h2>
+          <p class="form-subtitle">Login to continue your journey</p>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="loginEmail" placeholder="Enter your email" autocomplete="email" required>
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <input type="password" name="loginPassword" placeholder="Enter your password" autocomplete="current-password" required>
+          </label>
+          <a class="forgot" href="#forgot">Forgot your password?</a>
+          <button class="primary-button" type="submit">Login</button>
+          <p class="form-message" id="loginMessage" role="status"></p>
+        </form>
+      </div>
+
+      <div class="form-panel register-panel">
+        <form class="auth-form" id="registerForm">
+          <h2>Create Account</h2>
+          <p class="form-subtitle">Join us and get started today</p>
+          <label class="field">
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="registerEmail" placeholder="Enter your email" autocomplete="email" required>
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <input type="password" name="registerPassword" placeholder="Create a password" autocomplete="new-password" minlength="6" required>
+          </label>
+          <button class="primary-button" type="submit">Sign Up</button>
+          <p class="form-message" id="registerMessage" role="status"></p>
+        </form>
+      </div>
+
+      <div class="overlay" aria-live="polite">
+        <div class="overlay-panel overlay-left">
+          <div class="overlay-copy">
+            <h2>One of us?</h2>
+            <p>Already have an account? Sign in and continue where you left off.</p>
+            <button class="outline-button" id="showLogin" type="button">Sign In</button>
+          </div>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <div class="overlay-copy">
+            <h2>New Here?</h2>
+            <p>Create an account and discover everything waiting for you.</p>
+            <button class="outline-button" id="showRegister" type="button">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-note">A modern animated authentication experience</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

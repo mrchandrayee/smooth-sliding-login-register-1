@@ -1,0 +1,65 @@
+*{box-sizing:border-box}
+:root{font-family:Arial,Helvetica,sans-serif;color:#f5f6ff;background:#080914}
+html,body{margin:0;min-width:320px;min-height:100%;background:#080914}
+body{min-height:100vh;display:flex;justify-content:center;align-items:center;padding:28px 14px}
+.page{width:min(100%,560px);display:flex;flex-direction:column;align-items:center}
+h1{margin:0 0 26px;text-align:center;color:#82c3ff;font-size:clamp(21px,4.8vw,30px);line-height:1.2;letter-spacing:-.035em;text-shadow:0 0 12px #378cff88}
+.auth-shell{
+  --radius:13px;
+  width:min(100%,490px);
+  height:260px;
+  position:relative;
+  overflow:hidden;
+  border-radius:var(--radius);
+  background:#111625;
+  box-shadow:0 14px 35px #0009,0 0 24px #4723a633;
+}
+.form-panel{position:absolute;top:0;width:50%;height:100%;display:flex;align-items:center;justify-content:center;padding:17px 16px;background:linear-gradient(145deg,#111827,#101827 70%,#0c2737)}
+.login-panel{left:0;z-index:1}
+.register-panel{right:0;z-index:1}
+.auth-form{width:100%;display:flex;flex-direction:column;gap:7px}
+.auth-form h2{font-size:14px;margin:0 0 1px;color:#f5f6ff;font-weight:700}
+.form-subtitle{font-size:7px;color:#8c9bb2;margin:0 0 5px}
+.field{display:flex;flex-direction:column;gap:3px;color:#9eabc0;font-size:7px}
+.field input{width:100%;height:25px;border:1px solid #28364b;border-radius:5px;background:#101b2c;color:#f3f6ff;padding:0 8px;outline:none;font-size:8px;transition:border-color .2s,box-shadow .2s}
+.field input::placeholder{color:#607089}
+.field input:focus{border-color:#5579ff;box-shadow:0 0 0 2px #5579ff22}
+.forgot{align-self:flex-end;color:#8798b4;font-size:7px;text-decoration:none;margin-top:-2px}
+.forgot:hover{color:#fff}
+.primary-button{height:27px;border:0;border-radius:6px;background:linear-gradient(100deg,#7829ed,#276ce9 60%,#20c9d8);color:#fff;font-size:8px;font-weight:700;cursor:pointer;box-shadow:0 4px 12px #4b46e744;transition:filter .2s,transform .2s}
+.primary-button:hover{filter:brightness(1.15);transform:translateY(-1px)}
+.form-message{min-height:8px;margin:0;text-align:center;color:#82d9ff;font-size:7px}
+.overlay{position:absolute;z-index:5;top:0;left:0;width:50%;height:100%;overflow:hidden;transform:translateX(0);transition:transform .75s cubic-bezier(.68,-.15,.265,1.25);background:linear-gradient(135deg,#741ee9 0%,#4848ed 48%,#12bed4 100%);box-shadow:0 0 25px #0004}
+.overlay-panel{position:absolute;top:0;width:200%;height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px 24px;transition:transform .75s cubic-bezier(.68,-.15,.265,1.25)}
+.overlay-left{left:0;transform:translateX(-15%)}
+.overlay-right{right:0;transform:translateX(0)}
+.overlay-copy{width:50%;display:flex;flex-direction:column;align-items:center;gap:10px}
+.overlay-copy h2{font-size:13px;margin:0;color:#fff}
+.overlay-copy p{max-width:160px;font-size:7px;line-height:1.6;color:#e2e8ff;margin:0}
+.outline-button{min-width:58px;height:23px;padding:0 12px;border:1px solid #ffffffb8;border-radius:20px;background:transparent;color:#fff;font-size:7px;font-weight:700;cursor:pointer;transition:background .2s,color .2s}
+.outline-button:hover{background:#fff;color:#5142df}
+.auth-shell.register-mode .overlay{transform:translateX(100%)}
+.auth-shell.register-mode .overlay-left{transform:translateX(0)}
+.auth-shell.register-mode .overlay-right{transform:translateX(15%)}
+.auth-shell.register-mode .login-panel{z-index:0}
+.auth-shell.register-mode .register-panel{z-index:2}
+.footer-note{margin:18px 0 0;color:#66738d;font-size:8px;letter-spacing:.04em}
+@media(max-width:520px){
+ body{padding:22px 12px}
+ .auth-shell{height:310px}
+ .form-panel{width:100%;height:100%;padding:20px 18px}
+ .login-panel{width:50%;left:0}
+ .register-panel{width:50%;right:0}
+ .auth-form{gap:9px}
+ .auth-form h2{font-size:13px}
+ .field input{height:27px}
+ .overlay-panel{padding:16px 12px}
+ .overlay-copy{gap:8px}
+}
+@media(max-width:380px){
+ .auth-shell{height:330px}
+ .form-panel{padding:16px 11px}
+ .overlay-panel{padding:12px 8px}
+ .overlay-copy p{font-size:6.5px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
